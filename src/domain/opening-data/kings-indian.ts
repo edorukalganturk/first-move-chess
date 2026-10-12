@@ -1,0 +1,455 @@
+import type { LessonMove, Variation } from '../types';
+import { step, variation } from './shared';
+
+// Names and defining positions: lichess-org/chess-openings, e.tsv (E60–E97).
+// Black's repeated setup is shared; each branch explains its own central decision.
+const start: LessonMove[] = [
+  step(
+    'd4',
+    'White occupies the center',
+    'White’s queen pawn claims space and opens the c1 bishop’s diagonal.',
+    'The d4 pawn controls c5 and e5. Black can challenge these central pawns with pieces first, then choose a pawn break once the structure becomes clear.',
+    'White advances the queen pawn two squares.',
+  ),
+  step(
+    'Nf6',
+    'Control the center with a piece',
+    'Your kingside knight develops and controls d5 and e4.',
+    'You discourage an immediate e4 advance without committing a central pawn. This keeps your pawn structure flexible and is the starting point of the King’s Indian setup.',
+    'Develop the g8 knight toward e4.',
+  ),
+  step(
+    'c4',
+    'White takes more space',
+    'White’s c-pawn supports control of d5.',
+    'White builds a broad central presence and may continue with Nc3 and e4. Your plan is to let the pawn structure form, then challenge it with a well-prepared e5 or c5 break.',
+    'White advances the c-pawn two squares beside d4.',
+  ),
+  step(
+    'g6',
+    'Prepare the fianchetto',
+    'Your g-pawn makes a home for the bishop on g7.',
+    'The bishop can influence the center from the a1–h8 diagonal. A strong pawn center can block that bishop temporarily, so the later pawn break is a central part of your plan.',
+    'Move the g-pawn one square to prepare Bg7.',
+  ),
+];
+const whiteNc3 = step(
+  'Nc3',
+  'White prepares a broad center',
+  'The queenside knight supports an e4 advance.',
+  'With a knight defending e4, White can put another pawn in the center despite your f6 knight’s pressure. The knight also controls d5, giving White room to build.',
+  'White develops the b1 knight to c3.',
+);
+const blackBg7 = step(
+  'Bg7',
+  'Develop along the long diagonal',
+  'Your f8 bishop takes its prepared square on g7.',
+  'The bishop points through f6 and e5 toward d4. Those squares may be occupied for now; when the center opens, the bishop’s scope can increase. Vacating f8 also prepares castling.',
+  'Place your kingside bishop behind the g6 pawn.',
+);
+const whiteE4 = step(
+  'e4',
+  'White builds the pawn duo',
+  'White adds an e-pawn to the central d-pawn.',
+  'The d4 and e4 pawns give White space, but also become targets. Black’s task is to finish development and find the right moment to challenge one of them.',
+  'White advances the king pawn two squares, supported by Nc3.',
+);
+const blackD6 = step(
+  'd6',
+  'Restrain White’s e-pawn',
+  'Your queen pawn controls e5 and opens a line for the c8 bishop.',
+  'Controlling e5 makes it harder for White to chase your f6 knight with an e-pawn advance. You keep the e-pawn flexible so it can later challenge d4 from e5.',
+  'Move the queen pawn one square to guard e5.',
+);
+const blackCastle = step(
+  'O-O',
+  'Secure the king before striking',
+  'You castle behind the kingside pawns.',
+  'Both kingside pieces have moved, so the king can leave the center. A safe king makes an eventual e5 or c5 break easier to handle when lines begin to open.',
+  'Castle on the kingside.',
+);
+const whiteNf3 = step(
+  'Nf3',
+  'White develops another central defender',
+  'White’s kingside knight supports d4 and e5.',
+  'The knight adds control over the center and clears g1 for castling. Black should now choose a central plan rather than allow White unlimited time to improve.',
+  'White develops the g1 knight to f3.',
+);
+const whiteBe2 = step(
+  'Be2',
+  'White clears the path to castling',
+  'The kingside bishop develops to a sheltered square.',
+  'The move vacates f1, allowing White to castle. It keeps White’s center intact while avoiding an early commitment to a sharper attacking setup.',
+  'White develops the f1 bishop to e2.',
+);
+const blackE5 = step(
+  'e5',
+  'Challenge the base of White’s center',
+  'Your e-pawn attacks the pawn on d4.',
+  'The d6 pawn supports e5 while your f6 knight pressures e4. White can close the center with d5 or exchange on e5; your next plan depends on that choice.',
+  'Advance the e-pawn two squares to attack d4.',
+);
+const whiteCastle = step(
+  'O-O',
+  'White finishes kingside development',
+  'White castles and brings a rook closer to the center.',
+  'The king leaves the central files, reducing the immediate effect of opening the center. White can now choose a central or queenside plan with the king more secure.',
+  'White castles kingside.',
+);
+const normal: LessonMove[] = [...start, whiteNc3, blackBg7, whiteE4, blackD6];
+const orthodox: LessonMove[] = [...normal, whiteNf3, blackCastle, whiteBe2, blackE5];
+
+export const kingsIndianVariations: Variation[] = [
+  variation(
+    'kings-indian-classical',
+    'Classical Variation',
+    'Challenge d4 with e5 and reroute your knight when White closes the center.',
+    [
+      ...orthodox,
+      whiteCastle,
+      step(
+        'Nc6',
+        'Bring the second knight into play',
+        'Your queenside knight attacks d4 and supports e5.',
+        'Two knights now help contest White’s central pawns. White can respond with d5 to gain space and chase this knight, so development also requires a planned retreat.',
+        'Develop the b8 knight to c6 to pressure d4.',
+      ),
+      step(
+        'd5',
+        'White closes the center with tempo',
+        'White’s d-pawn advances and attacks your c6 knight.',
+        'The locked d5–e5 structure reduces immediate central exchanges. White often seeks queenside space while Black looks for a kingside break; first, the attacked knight needs a safe square.',
+        'White advances the d-pawn one square to attack Nc6.',
+      ),
+      step(
+        'Ne7',
+        'Reroute behind your pawn chain',
+        'Your attacked knight retreats from c6 to e7.',
+        'The knight remains near the center and can support a future f5 advance. Retreating is useful when it connects the piece to a new plan rather than simply leaving it out of play.',
+        'Move the attacked c6 knight to e7, behind the e5 pawn.',
+      ),
+    ],
+  ),
+  variation(
+    'kings-indian-saemisch',
+    'Sämisch Variation',
+    'Use the Panno setup to find queenside play against White’s solid f3 center.',
+    [
+      ...normal,
+      step(
+        'f3',
+        'White gives e4 extra support',
+        'White reinforces the center and controls g4.',
+        'The f3 pawn helps keep your knight away from g4, where it could attack a bishop on e3. It also blocks White’s kingside knight from its usual f3 square, changing White’s development plan.',
+        'White moves the f-pawn one square to support e4.',
+      ),
+      blackCastle,
+      step(
+        'Be3',
+        'White develops behind the center',
+        'White brings out the c1 bishop and supports d4.',
+        'The bishop can work with a queen on d2 and may help prepare queenside castling. White’s center is well supported, so Black looks for active counterplay on a flank.',
+        'White develops the queenside bishop to e3.',
+      ),
+      step(
+        'Nc6',
+        'Pressure the center with a knight',
+        'Your queenside knight attacks d4 and prepares the Panno formation.',
+        'Rather than immediately committing the e-pawn, you develop a piece and keep both e5 and queenside play available. Watch for d5, which would attack this knight.',
+        'Develop the b8 knight to c6.',
+      ),
+      step(
+        'Nge2',
+        'White uses an alternative knight route',
+        'The g1 knight develops to e2 because f3 is occupied.',
+        'From e2 the knight can help defend d4 and later move to g3 or c1. This also clears g1 without disturbing White’s supporting pawn on f3.',
+        'White develops the g1 knight to e2, not the blocked f3 square.',
+      ),
+      step(
+        'a6',
+        'Prepare queenside expansion',
+        'Your a-pawn supports a future b5 advance.',
+        'The Panno plan uses a6 and a rook on b8 to prepare queenside activity against White’s broad center. The timing of b5 still matters because White’s c4 pawn controls that square.',
+        'Move the a-pawn one square to support a later b5.',
+      ),
+      step(
+        'Qd2',
+        'White connects the queen and bishop',
+        'White’s queen supports the bishop on e3 and prepares options for the king.',
+        'Moving the queen also clears d1 for possible queenside castling. White may use the e3–h6 diagonal to exchange your g7 bishop, so keep the dark squares around your king in mind.',
+        'White places the queen on d2 behind the e3 bishop.',
+      ),
+      step(
+        'Rb8',
+        'Put a rook behind the planned advance',
+        'Your queenside rook supports the b-pawn.',
+        'With the knight off b8 and a6 already played, the rook can help a future b5 break. A flank pawn advance needs support when an opponent’s pawn on c4 controls its destination.',
+        'Move the a8 rook to b8 to support the b-pawn.',
+      ),
+    ],
+  ),
+  variation(
+    'kings-indian-fianchetto',
+    'Fianchetto Variation',
+    'Meet White’s long-diagonal bishop with a flexible Panno setup.',
+    [
+      ...start,
+      whiteNf3,
+      blackBg7,
+      step(
+        'g3',
+        'White prepares a matching fianchetto',
+        'White makes room for the f1 bishop on g2.',
+        'A bishop on g2 supports d5 and helps shelter a castled king. White chooses steady piece pressure rather than occupying e4 immediately.',
+        'White advances the g-pawn one square to prepare Bg2.',
+      ),
+      blackCastle,
+      step(
+        'Bg2',
+        'White develops along the long diagonal',
+        'White’s bishop takes the prepared g2 square.',
+        'The bishop influences the center from the h1–a8 diagonal, although the f3 knight currently blocks part of its path. White has now cleared f1 for castling.',
+        'White places the f1 bishop behind the g3 pawn.',
+      ),
+      blackD6,
+      whiteCastle,
+      step(
+        'Nc6',
+        'Pressure d4 before choosing a pawn break',
+        'Your queenside knight develops and attacks d4.',
+        'In this fianchetto structure, you can keep the e-pawn flexible and prepare queenside space. White can still advance d5 to gain space and push the knight away.',
+        'Develop the b8 knight to c6.',
+      ),
+      whiteNc3,
+      step(
+        'a6',
+        'Prepare a queenside plan',
+        'Your a-pawn controls b5 and supports a later b5 advance.',
+        'This completes the basic Panno formation against the fianchetto. You can use Rb8 to support queenside expansion, but must account for White’s c4 pawn before pushing b5.',
+        'Advance the a-pawn one square to prepare queenside play.',
+      ),
+    ],
+  ),
+  variation(
+    'kings-indian-four-pawns',
+    'Four Pawns Attack',
+    'Undermine White’s broad pawn front with c5 and e6.',
+    [
+      ...normal,
+      step(
+        'f4',
+        'White builds a four-pawn front',
+        'White adds a pawn on f4 to the pawns on c4, d4, and e4.',
+        'This gains space and supports e5, but moving so many pawns costs development time. Black can respond by attacking the center before White’s pieces are fully coordinated.',
+        'White advances the f-pawn two squares.',
+      ),
+      blackCastle,
+      whiteNf3,
+      step(
+        'c5',
+        'Challenge the center from the side',
+        'Your c-pawn attacks d4.',
+        'A broad pawn center can become a target. If White advances d5 to gain space, you can prepare to attack that pawn with e6 rather than allow the center to remain untouched.',
+        'Advance the c-pawn two squares to attack d4.',
+      ),
+      step(
+        'd5',
+        'White gains space and releases the attack on d4',
+        'White pushes the d-pawn beyond your c-pawn.',
+        'The move closes one part of the center, but the pawn on d5 becomes the point Black can undermine. White still needs to develop the f1 bishop and secure the king.',
+        'White advances the d4 pawn one square.',
+      ),
+      step(
+        'e6',
+        'Attack the advanced pawn chain',
+        'Your e-pawn prepares an exchange against d5.',
+        'If the center opens while White’s pieces are still developing, your completed kingside setup can be useful. Decide whether to exchange on d5 based on the position rather than releasing the tension automatically.',
+        'Move your e-pawn one square to challenge d5.',
+      ),
+    ],
+  ),
+  variation(
+    'kings-indian-averbakh',
+    'Averbakh Variation',
+    'Meet White’s bishop-led development with the c5 central break.',
+    [
+      ...normal,
+      whiteBe2,
+      blackCastle,
+      step(
+        'Bg5',
+        'White keeps watch on your kingside knight',
+        'White develops the c1 bishop to g5 before moving the g1 knight.',
+        'The bishop eyes f6 and may create a relative pin to your queen if the e7 pawn moves. White keeps the knight flexible and aims to restrain your usual kingside counterplay.',
+        'White develops the queenside bishop to g5.',
+      ),
+      step(
+        'c5',
+        'Challenge the center without moving e7',
+        'Your c-pawn attacks White’s d4 pawn.',
+        'This Benoni-style response questions White’s central structure while leaving the e7 pawn in place. If White advances d5, a later e6 break can challenge the advanced pawn.',
+        'Push the c-pawn two squares to attack d4.',
+      ),
+    ],
+  ),
+  variation(
+    'kings-indian-makogonov',
+    'Makogonov Variation',
+    'Respect h3, challenge the center, and slow White’s queenside expansion.',
+    [
+      ...normal,
+      step(
+        'h3',
+        'White restricts your knight',
+        'White’s h-pawn controls g4.',
+        'This keeps your f6 knight away from g4 and makes it easier for White to develop the c1 bishop freely. It also costs a move that Black can use to complete development and challenge the center.',
+        'White advances the h-pawn one square to control g4.',
+      ),
+      blackCastle,
+      whiteNf3,
+      blackE5,
+      step(
+        'd5',
+        'White takes space in a closed center',
+        'White advances the d-pawn past your e-pawn.',
+        'The pawn chains are locked, so play can shift to the wings. White’s h3 move has reduced one of your kingside knight options, making flexible counterplay useful.',
+        'White advances the d-pawn one square to close the center.',
+      ),
+      step(
+        'a5',
+        'Slow a queenside pawn expansion',
+        'Your a-pawn controls b4.',
+        'White often seeks queenside space after closing the center. Controlling b4 can make that plan harder while you decide how to develop your remaining pieces and prepare a central or kingside break.',
+        'Advance your a-pawn two squares to control b4.',
+      ),
+    ],
+  ),
+  variation(
+    'kings-indian-petrosian',
+    'Petrosian Variation',
+    'Meet an early d5 with Nbd7 and ask the g5 bishop to decide.',
+    [
+      ...orthodox,
+      step(
+        'd5',
+        'White closes the center before castling',
+        'White gains space with d5 while the king remains on e1.',
+        'Unlike the Classical line, White commits the pawn structure before castling. You can develop the b8 knight to d7 without exposing it to an immediate d-pawn attack.',
+        'White pushes d4 to d5 before castling.',
+      ),
+      step(
+        'Nbd7',
+        'Develop without being chased by d5',
+        'Your b8 knight develops to d7 and supports e5.',
+        'Both knights can reach d7, so the notation identifies the b8 knight. This route avoids c6, where White’s d5 pawn would attack it, and can support later kingside play.',
+        'Develop the queenside knight to d7; leave the f6 knight in place.',
+      ),
+      step(
+        'Bg5',
+        'White pins the central defender',
+        'White’s bishop pins the f6 knight to your queen.',
+        'Your e-pawn has moved from e7, so the diagonal from g5 to d8 is now open behind the knight. White tries to make your piece coordination less comfortable before deciding where to castle.',
+        'White develops the c1 bishop to g5.',
+      ),
+      step(
+        'h6',
+        'Ask the bishop to choose',
+        'Your h-pawn attacks the bishop on g5.',
+        'The bishop must retreat or exchange. Gaining this information can help your next plan, but the pawn move also changes squares around your king, so further kingside pawn advances need care.',
+        'Move the h-pawn one square to challenge Bg5.',
+      ),
+    ],
+  ),
+  variation(
+    'kings-indian-gligoric',
+    'Gligoric–Taimanov System',
+    'Meet Be3 with an active knight jump to g4.',
+    [
+      ...orthodox,
+      step(
+        'Be3',
+        'White develops before castling',
+        'White places the queenside bishop on e3 to support d4.',
+        'White keeps the king’s future flexible instead of immediately castling. But with no f3 or h3 pawn controlling g4, Black has an active knight jump against this bishop.',
+        'White develops the c1 bishop to e3.',
+      ),
+      step(
+        'Ng4',
+        'Develop a threat against the bishop',
+        'Your f6 knight jumps to g4 and attacks the bishop on e3.',
+        'The knight forces White to consider the bishop’s future and also attacks f2. This is pressure rather than an automatic win: watch White’s central threats and avoid letting the knight become trapped.',
+        'Jump the f6 knight to g4 to attack Be3.',
+      ),
+    ],
+  ),
+  variation(
+    'kings-indian-exchange',
+    'Exchange Variation',
+    'Understand the open center after White exchanges on e5.',
+    [
+      ...orthodox,
+      step(
+        'dxe5',
+        'White chooses an open center',
+        'White’s d-pawn captures your e5 pawn.',
+        'White gives up the option of closing the center with d5. The exchange may lead to further simplification along the d-file, so both sides should value active development.',
+        'White captures the e5 pawn with the pawn from d4.',
+      ),
+      step(
+        'dxe5',
+        'Restore the central balance',
+        'Your d6 pawn recaptures on e5.',
+        'Your pawn still contests d4, but the d-file is now open. Queen exchanges may become possible, and the position calls for piece activity rather than assuming the usual closed-center kingside attack.',
+        'Recapture on e5 with the pawn from d6.',
+      ),
+    ],
+  ),
+  variation(
+    'kings-indian-smyslov',
+    'Smyslov Variation',
+    'Meet early Bg5 and a modest e3 center with direct pressure on d4.',
+    [
+      ...start,
+      whiteNc3,
+      blackBg7,
+      step(
+        'Nf3',
+        'White develops instead of pushing e4',
+        'White brings out the kingside knight while the e-pawn stays home.',
+        'This prepares castling and supports d4 without building the full e4–d4 center. Black should respond to the actual structure rather than assume White will enter a main Classical line.',
+        'White develops the g1 knight to f3 before moving the e-pawn.',
+      ),
+      blackD6,
+      step(
+        'Bg5',
+        'White develops the bishop early',
+        'White puts the c1 bishop on g5 before moving the e-pawn.',
+        'The bishop eyes f6 and is outside any future e3 pawn chain. The e7 pawn still blocks a direct pin to your queen, so the bishop is exerting pressure rather than immobilizing your knight.',
+        'White develops the queenside bishop to g5.',
+      ),
+      blackCastle,
+      step(
+        'e3',
+        'White chooses a modest central setup',
+        'White opens the f1 bishop’s diagonal without advancing to e4.',
+        'The pawn supports d4 while leaving more room for Black’s central play. White has developed the c1 bishop first, so the e3 pawn does not block it inside the pawn chain.',
+        'White advances the king pawn one square.',
+      ),
+      step(
+        'c5',
+        'Attack the supported d-pawn',
+        'Your c-pawn challenges d4 directly.',
+        'Against White’s more modest e3 center, pressure on d4 is a natural source of counterplay. An exchange on d4 can clarify the structure, but maintaining the tension is also possible.',
+        'Push the c-pawn two squares to challenge d4.',
+      ),
+      whiteBe2,
+      step(
+        'Nc6',
+        'Add a second attacker to d4',
+        'Your queenside knight joins the central struggle.',
+        'The c5 pawn and c6 knight both pressure d4. Completing development gives your central challenge more force while keeping the e-pawn available for a later decision.',
+        'Develop the b8 knight to c6 to add pressure on d4.',
+      ),
+    ],
+  ),
+];

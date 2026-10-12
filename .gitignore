@@ -1,0 +1,16 @@
+node_modules/
+.pnpm-store/
+.sites-runtime/
+.sites-checkout/
+.sites-checkout-*/
+dist/
+test-results/
+playwright-report/
+*.tsbuildinfo
+*.log
+
+# Local hosting metadata and environment secrets
+.openai/
+.env
+.env.*
+!.env.example
