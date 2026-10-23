@@ -116,43 +116,52 @@ button:hover:not(:disabled) {
   inset: 0 auto 0 0;
   background: var(--surface-sidebar, #f0f2e9);
   border-right: 1px solid var(--theme-border, #e2e5d9);
-  padding: 33px 24px 20px;
+  padding: 24px 24px 20px;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
   z-index: 20;
 }
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 23px;
-  font-weight: 700;
-  letter-spacing: -1px;
+  flex-shrink: 0;
+  color: var(--green);
+}
+.brand--stacked {
+  width: 100%;
+}
+.brand-artwork {
+  display: block;
+  flex-shrink: 0;
+}
+.brand--stacked .brand-artwork {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.brand--compact {
+  gap: 7px;
   white-space: nowrap;
 }
-.brand-mark {
-  width: 35px;
-  height: 40px;
-  background: var(--green);
-  border-radius: 9px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.brand-mark .chess-piece {
-  width: 29px;
+.brand--compact .brand-artwork {
+  width: 48px;
   height: 34px;
-  filter: none;
+  border-radius: 6px;
 }
-.brand-dot {
-  color: var(--text-muted, #8ba681);
+.brand-name {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.6px;
 }
 .sidebar-label {
   font-size: 13px;
   letter-spacing: 1.7px;
   color: var(--text-muted, #90968b);
   font-weight: 600;
-  margin: 49px 0 15px 13px;
+  margin: 28px 0 15px 13px;
 }
 .sidebar nav {
   display: grid;
@@ -194,8 +203,8 @@ button:hover:not(:disabled) {
   margin-top: auto;
 }
 .sidebar-quote {
-  margin: 50px 0 28px;
-  padding: 18px 14px 25px;
+  margin: 28px 0 22px;
+  padding: 16px 10px 20px;
   text-align: center;
   border-bottom: 1px solid var(--theme-border, #dce1d4);
 }
@@ -1137,26 +1146,22 @@ button:hover:not(:disabled) {
   margin-top: 37px;
   padding: 22px 0 25px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 15px;
   color: var(--text-muted, #9aa58e);
   font-size: 12px;
 }
 .footer .brand {
-  font-size: 15px;
+  gap: 6px;
+}
+.footer .brand-name {
+  font-size: 17px;
   letter-spacing: -0.3px;
-  gap: 5px;
-  color: var(--text-muted, #829377);
 }
-.footer .brand-mark {
-  width: 19px;
-  height: 21px;
-  border-radius: 5px;
-  background: #8b9a7b;
-}
-.footer .brand-mark .chess-piece {
-  width: 15px;
-  height: 18px;
+.footer .brand-artwork {
+  width: 34px;
+  height: 26px;
 }
 .footer-leaf {
   margin-left: auto;
@@ -2252,14 +2257,6 @@ button:hover:not(:disabled) {
     padding-left: 15px;
     padding-right: 15px;
   }
-  .brand {
-    font-size: 21px;
-    gap: 7px;
-  }
-  .brand-mark {
-    width: 32px;
-    height: 37px;
-  }
   .main-shell {
     margin-left: 185px;
   }
@@ -2383,12 +2380,8 @@ button:hover:not(:disabled) {
   .mobile-brand {
     display: block;
   }
-  .mobile-brand .brand {
-    font-size: 22px;
-  }
-  .mobile-brand .brand-mark {
-    width: 31px;
-    height: 35px;
+  .mobile-brand .brand-name {
+    font-size: 21px;
   }
   .breadcrumb {
     display: none;
@@ -3270,8 +3263,12 @@ button:hover:not(:disabled) {
   border-color: var(--sage);
   color: var(--text-accent, #49673b);
 }
-:root[data-theme='dark'] .brand-mark {
-  background: #345b43;
+:root[data-theme='dark'] .brand-artwork {
+  background: #f7f8f3;
+  padding: 4px;
+}
+:root[data-theme='dark'] .brand--stacked .brand-artwork {
+  padding: 9px;
 }
 :root[data-theme='dark'] .featured-board .board-wrap {
   border-color: #435846;
@@ -3290,6 +3287,16 @@ button:hover:not(:disabled) {
   color: #142b20;
 }
 @media (max-width: 420px) {
+  .mobile-brand .brand-name {
+    font-size: 19px;
+  }
+  .mobile-brand .brand-artwork {
+    width: 42px;
+    height: 30px;
+  }
+  .streak-pill > span {
+    display: none;
+  }
   .topbar-actions {
     gap: 8px;
   }

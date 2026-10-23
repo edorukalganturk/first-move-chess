@@ -1,0 +1,290 @@
+{
+  "id": "italian-game-tr-v4",
+  "outputStem": "italian-game-tr-v4",
+  "language": "tr",
+  "presentation": "fast",
+  "title": "Bu fil hamlesi ne işe yarıyor? | İtalyan Açılışı: Giuoco Piano",
+  "openingId": "italian-game",
+  "variationId": "giuoco-piano",
+  "displayOpening": "İtalyan Açılışı",
+  "displayVariation": "Giuoco Piano",
+  "brandName": "ChessMahal",
+  "brandTagline": "Gel, birlikte öğrenelim.",
+  "seriesLabel": "İTALYAN / 01",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration": 32,
+  "speechEngine": "voxcpm2",
+  "voice": "voxcpm2-designed-turkish",
+  "voiceSettings": {
+    "profile": "connected-conversation",
+    "control": "An adult native Turkish woman in her early thirties with a warm, velvety middle register and a gently playful conversational delivery. She explains chess to one friend with flowing connected phrases, clear Istanbul Turkish diction, meaningful emphasis and a natural curious lift on questions. Clean close-mic studio speech at a relaxed but engaging pace.",
+    "cfgValue": 2,
+    "inferenceSteps": 16,
+    "seed": 42
+  },
+  "introDuration": 2,
+  "introMoves": [
+    "1. e4 e5  2. Af3 Ac6",
+    "3. Fc4 Fc5  4. c3"
+  ],
+  "posterFrameIndex": 0,
+  "answerWaitSeconds": 3,
+  "countdownStart": 22.8,
+  "revealAt": 25.8,
+  "previewTimes": [
+    1,
+    3.75,
+    7.1,
+    10.65,
+    14.6,
+    18.4,
+    24,
+    29.95
+  ],
+  "answerHeading": [
+    "Fil c4'e",
+    "geliyor."
+  ],
+  "answerBody": "Filimizi geliştirirken f7 piyonuna baskı kuruyoruz.",
+  "answerNoteLabel": "CEVAP: 3. Fc4",
+  "answerNote": "Hamlenin arkasındaki fikir bu.",
+  "countdownPrompt": "Sence hangi kare?",
+  "voiceDisclosure": "YAPAY ZEKÂ SESLENDİRMESİ · YEREL ÜRETİM",
+  "ui": {
+    "learnOpenings": "BİRLİKTE SATRANÇ ÖĞRENELİM",
+    "opening": "AÇILIŞ",
+    "variation": "VARYANT",
+    "repertoire": "BEYAZLA OYNUYORUZ",
+    "inThisLesson": "BUGÜN BU HAMLELERE BAKIYORUZ",
+    "introCta": "Hamleyi öğren, nedenini de anla.",
+    "answered": "CEVAP",
+    "footer": "FİKRİ ANLA, HAMLEYİ DENE."
+  },
+  "badges": {
+    "WHITE TO MOVE": "HAMLE BEYAZDA",
+    "ONE DEFENDER: THE KING": "BU PİYONU SADECE ŞAH KORUYOR",
+    "DEVELOPMENT": "FİL OYUNA GİRİYOR",
+    "AFTER 3. Bc4": "3. Fc4 SONRASI",
+    "PLAN: O-O": "ROK YAPABİLİRİZ",
+    "NEXT PLAN: d4": "SIRADAKİ PLANIMIZ: d4",
+    "THAT'S THE MOVE": "3. Fc4",
+    "THE ITALIAN GAME": "İTALYAN AÇILIŞI"
+  },
+  "effectEvents": [
+    [
+      0.12,
+      261.63,
+      0.05
+    ],
+    [
+      0.28,
+      329.63,
+      0.045
+    ],
+    [
+      0.46,
+      392,
+      0.04
+    ],
+    [
+      1.82,
+      880,
+      0.02
+    ],
+    [
+      5.7,
+      240,
+      0.08
+    ],
+    [
+      13.1,
+      205,
+      0.08
+    ],
+    [
+      17.1,
+      240,
+      0.08
+    ],
+    [
+      22.8,
+      680,
+      0.025
+    ],
+    [
+      23.8,
+      680,
+      0.025
+    ],
+    [
+      24.8,
+      680,
+      0.025
+    ],
+    [
+      25.9,
+      310,
+      0.07
+    ]
+  ],
+  "scenes": [
+    {
+      "id": "intro",
+      "start": 0,
+      "end": 2
+    },
+    {
+      "id": "hook",
+      "start": 2,
+      "end": 5.5,
+      "eyebrow": "KÜÇÜK BİR DETAY",
+      "heading": [
+        "Bu fil hamlesi",
+        "ne işe yarıyor?"
+      ],
+      "body": "İtalyan Açılışı'nın arkasındaki fikre bakalım.",
+      "noteLabel": "f7 / BİR BAKALIM",
+      "note": "Savunmasına bakınca fikir netleşiyor."
+    },
+    {
+      "id": "develop",
+      "start": 5.5,
+      "end": 8.7,
+      "eyebrow": "İTALYAN AÇILIŞI",
+      "heading": [
+        "Fili c4'e",
+        "geliştiriyoruz."
+      ],
+      "body": "Fil oyuna girerken f7 piyonuna da bakıyor.",
+      "noteLabel": "3. Fc4",
+      "note": "Bir hamlede iki iş."
+    },
+    {
+      "id": "pressure",
+      "start": 8.7,
+      "end": 12.6,
+      "eyebrow": "01 / NEDEN BU KARE?",
+      "heading": [
+        "Sadece şah",
+        "koruyor."
+      ],
+      "body": "Bu yüzden f7 piyonu ilgimizi çekiyor.",
+      "noteLabel": "KORUYAN TEK TAŞ ŞAH",
+      "note": "Baskıyı kurduk, gelişmeye devam."
+    },
+    {
+      "id": "castle",
+      "start": 12.6,
+      "end": 16.6,
+      "eyebrow": "02 / ŞAHI GÜVENE ALALIM",
+      "heading": [
+        "Rok yolu",
+        "da açılıyor."
+      ],
+      "body": "f1 ve g1 boş; şahı güvene alabiliriz.",
+      "noteLabel": "3...Fc5 SONRASI",
+      "note": "Sırada şahımızın güvenliği var."
+    },
+    {
+      "id": "center",
+      "start": 16.6,
+      "end": 20.2,
+      "eyebrow": "03 / MERKEZE HAZIRLIK",
+      "heading": [
+        "Merkezi",
+        "destekliyoruz."
+      ],
+      "body": "c3 ile ilerideki d4 sürüşüne hazırlanıyoruz.",
+      "noteLabel": "PLANIMIZ BU",
+      "note": "Merkezde yer açmak istiyoruz."
+    },
+    {
+      "id": "recall",
+      "start": 20.2,
+      "end": 27.9,
+      "eyebrow": "BİR DÜŞÜN / HAMLE BEYAZDA",
+      "heading": [
+        "Fili hangi",
+        "kareye çıkarmıştık?"
+      ],
+      "body": "Tahtaya bakıp hamleyi hatırla.",
+      "noteLabel": "SIRA SENDE",
+      "note": "Düşünmek için üç saniyen var."
+    },
+    {
+      "id": "practice",
+      "start": 27.9,
+      "end": 32,
+      "eyebrow": "AÇILIŞIN DEVAMI",
+      "heading": [
+        "Devamını",
+        "kendin dene."
+      ],
+      "body": "Bu varyantı ChessMahal'da oynayabilirsin.",
+      "noteLabel": "CHESSMAHAL",
+      "note": "Açılışı oynayarak öğren."
+    }
+  ],
+  "questionSegmentId": "lesson",
+  "narration": [
+    {
+      "id": "lesson",
+      "start": 2.06,
+      "voiceStart": 2.06,
+      "end": 22.8,
+      "voice": "İtalyan Açılışı'nda bu fil hamlesini çok görürüz. Güzel tarafı şu: hem taşımızı geliştiriyoruz hem de sadece şahın koruduğu piyona baskı yapıyoruz. Siyah da filini çıkardığında rok yolumuz açılıyor. Ardından bu piyon hamlesiyle merkezi destekliyoruz. Peki, fili hangi kareye çıkarmıştık?"
+    },
+    {
+      "id": "answer",
+      "start": 25.9,
+      "voiceStart": 25.9,
+      "end": 32,
+      "voice": "Filimiz c4'e geliyor. Açılışın devamını ChessMahal'da kendin de deneyebilirsin.",
+      "speechText": "Filimiz ce dörde geliyor. Açılışın devamını Çes Mahal'da kendin de deneyebilirsin."
+    }
+  ],
+  "captions": [
+    {
+      "start": 2.06,
+      "end": 5.58,
+      "text": "İtalyan Açılışı'nda bu fil hamlesini çok görürüz."
+    },
+    {
+      "start": 5.58,
+      "end": 8.84,
+      "text": "Güzel tarafı şu: hem taşımızı geliştiriyoruz"
+    },
+    {
+      "start": 8.84,
+      "end": 12.68,
+      "text": "hem de sadece şahın koruduğu piyona baskı yapıyoruz."
+    },
+    {
+      "start": 12.68,
+      "end": 16.66,
+      "text": "Siyah da filini çıkardığında rok yolumuz açılıyor."
+    },
+    {
+      "start": 16.66,
+      "end": 20.34,
+      "text": "Ardından bu piyon hamlesiyle merkezi destekliyoruz."
+    },
+    {
+      "start": 20.34,
+      "end": 22.662,
+      "text": "Peki, fili hangi kareye çıkarmıştık?"
+    },
+    {
+      "start": 25.9,
+      "end": 27.96,
+      "text": "Filimiz c4'e geliyor."
+    },
+    {
+      "start": 27.96,
+      "end": 31.341,
+      "text": "Açılışın devamını ChessMahal'da kendin de deneyebilirsin."
+    }
+  ]
+}

@@ -1,5 +1,13 @@
-const CACHE = 'first-move-v1';
-const PRECACHE = ['/', '/index.html', '/icon.svg'];
+const CACHE = 'chessmahal-v1';
+const PRECACHE = [
+  '/',
+  '/index.html',
+  '/icon.svg',
+  '/manifest.webmanifest',
+  '/brand/icon-192.png',
+  '/brand/icon-512.png',
+  '/brand/apple-touch-icon.png',
+];
 self.addEventListener('install', (event) => {
   self.skipWaiting();
   event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(PRECACHE)));
@@ -11,7 +19,10 @@ self.addEventListener('activate', (event) => {
       .then((keys) =>
         Promise.all(
           keys
-            .filter((key) => key.startsWith('first-move-') && key !== CACHE)
+            .filter(
+              (key) =>
+                (key.startsWith('first-move-') || key.startsWith('chessmahal-')) && key !== CACHE,
+            )
             .slice(0, -1)
             .map((key) => caches.delete(key)),
         ),

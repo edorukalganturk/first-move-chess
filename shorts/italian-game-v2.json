@@ -1,0 +1,113 @@
+{
+  "id": "italian-game-v2",
+  "outputStem": "italian-game-v2",
+  "presentation": "fast",
+  "title": "One pawn. One defender. | The Italian Game",
+  "variationId": "giuoco-piano",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration": 22.2,
+  "speechEngine": "kokoro",
+  "voice": "af_heart",
+  "voiceSpeed": 1.06,
+  "revealAt": 17.4,
+  "countdownStart": 15.4,
+  "previewTimes": [0, 1.3, 3.2, 5.8, 9.3, 12.6, 16.2, 20],
+  "effectEvents": [
+    [0.05, 170, 0.12],
+    [0.58, 420, 0.07],
+    [2.65, 240, 0.16],
+    [8.35, 205, 0.16],
+    [11.45, 240, 0.16],
+    [15.4, 680, 0.045],
+    [16.4, 680, 0.045],
+    [17.8, 310, 0.16]
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "start": 0,
+      "end": 2,
+      "eyebrow": "SPOT THE TARGET",
+      "heading": ["One pawn.", "One defender."],
+      "body": "Why aim here?",
+      "noteLabel": "f7 / WATCH THIS SQUARE",
+      "note": "A target hiding in plain sight.",
+      "voice": "Why aim here?",
+      "voiceStart": 0.06
+    },
+    {
+      "id": "develop",
+      "start": 2,
+      "end": 4.5,
+      "eyebrow": "THE ITALIAN GAME",
+      "heading": ["Bc4.", "With a purpose."],
+      "body": "Develop your bishop. Create pressure.",
+      "noteLabel": "3. Bc4",
+      "note": "Active piece. Clear plan.",
+      "voice": "Bishop to C four. The Italian Game.",
+      "voiceStart": 2.05
+    },
+    {
+      "id": "pressure",
+      "start": 4.5,
+      "end": 7.8,
+      "eyebrow": "01 / PRESSURE",
+      "heading": ["Eyes on", "f7."],
+      "body": "Only the king defends this pawn.",
+      "noteLabel": "ONE DEFENDER",
+      "note": "Build pressure. Keep developing.",
+      "voice": "It eyes F seven, defended only by the king.",
+      "voiceStart": 4.6
+    },
+    {
+      "id": "castle",
+      "start": 7.8,
+      "end": 10.8,
+      "eyebrow": "02 / KING SAFETY",
+      "heading": ["Clear the way", "to castle."],
+      "body": "f1 and g1 are free.",
+      "noteLabel": "AFTER 3...Bc5",
+      "note": "Your king has a route to safety.",
+      "voice": "After bishop C five, you're ready to castle.",
+      "voiceStart": 7.9
+    },
+    {
+      "id": "center",
+      "start": 10.8,
+      "end": 14.5,
+      "eyebrow": "03 / THE CENTER",
+      "heading": ["c3.", "Prepare d4."],
+      "body": "Build support before you push.",
+      "noteLabel": "YOUR NEXT PLAN",
+      "note": "c3 supports a future d4 advance.",
+      "voice": "Now C three. Prepare D four and challenge the center.",
+      "voiceStart": 10.9
+    },
+    {
+      "id": "recall",
+      "start": 14.5,
+      "end": 18.7,
+      "eyebrow": "YOUR TURN / WHITE TO MOVE",
+      "heading": ["Your move.", "Find the square."],
+      "body": "Bring the bishop into the game.",
+      "noteLabel": "PLAY IT FROM MEMORY",
+      "note": "Where does your bishop belong?",
+      "voice": "Your turn. Find the bishop move.",
+      "voiceStart": 14.58
+    },
+    {
+      "id": "practice",
+      "start": 18.7,
+      "end": 22.2,
+      "eyebrow": "MAKE IT STICK",
+      "heading": ["Know the idea.", "Play the move."],
+      "body": "Practice the Italian Game in the app.",
+      "noteLabel": "LEARN / RECALL / REPEAT",
+      "note": "Your next move is practice.",
+      "voice": "Practice the full line. Then play it from memory.",
+      "voiceStart": 18.8
+    }
+  ]
+}

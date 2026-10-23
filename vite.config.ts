@@ -16,13 +16,20 @@ export default defineConfig({
             '/index.html',
             '/icon.svg',
             '/manifest.webmanifest',
+            '/brand/icon-192.png',
+            '/brand/icon-512.png',
+            '/brand/apple-touch-icon.png',
             ...Object.keys(bundle).map((name) => `/${name}`),
           ]),
         ];
-        const version = createHash('sha256').update(assets.join('|')).digest('hex').slice(0, 12);
+        const version = createHash('sha256')
+          .update(assets.join('|'))
+          .update(readFileSync('public/icon.svg'))
+          .digest('hex')
+          .slice(0, 12);
         const worker = readFileSync('public/sw.js', 'utf8')
-          .replace('first-move-v1', `first-move-${version}`)
-          .replace("['/', '/index.html', '/icon.svg']", JSON.stringify(assets));
+          .replace('chessmahal-v1', `chessmahal-${version}`)
+          .replace(/const PRECACHE = \[[\s\S]*?\];/, `const PRECACHE = ${JSON.stringify(assets)};`);
         this.emitFile({ type: 'asset', fileName: 'sw.js', source: worker });
       },
     },

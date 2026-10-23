@@ -1,0 +1,20 @@
+{
+  "voice": "voxcpm2-designed-turkish",
+  "voiceSettings": {
+    "profile": "connected-conversation",
+    "control": "An adult native Turkish woman in her early thirties with a warm, velvety middle register and a gently playful conversational delivery. She explains chess to one friend with flowing connected phrases, clear Istanbul Turkish diction, meaningful emphasis and a natural curious lift on questions. Clean close-mic studio speech at a relaxed but engaging pace.",
+    "cfgValue": 2,
+    "inferenceSteps": 16,
+    "seed": 42
+  },
+  "clips": [
+    {
+      "text": "İtalyan Açılışı'nda bu fil hamlesini çok görürüz. Güzel tarafı şu: hem taşımızı geliştiriyoruz hem de sadece şahın koruduğu piyona baskı yapıyoruz. Siyah da filini çıkardığında rok yolumuz açılıyor. Ardından bu piyon hamlesiyle merkezi destekliyoruz. Peki, fili hangi kareye çıkarmıştık?",
+      "path": "shorts/output/.cache/italian-game-tr-v4/lesson.wav"
+    },
+    {
+      "text": "Filimiz ce dörde geliyor. Açılışın devamını Çes Mahal'da kendin de deneyebilirsin.",
+      "path": "shorts/output/.cache/italian-game-tr-v4/answer.wav"
+    }
+  ]
+}

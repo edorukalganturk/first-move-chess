@@ -33,6 +33,7 @@ import {
 } from 'lucide-react';
 import { ChessBoard } from './components/ChessBoard';
 import { ChessPiece } from './components/ChessPiece';
+import { Brand } from './components/Brand';
 import { MixedPractice, MixedPracticeCard } from './components/MixedPractice';
 import { buildMixedPuzzlePool, createMixedPracticeSession } from './domain/mixed-practice';
 import type { MixedPracticeQuestion } from './domain/mixed-practice';
@@ -65,18 +66,6 @@ const navigation: { id: Page; label: string; icon: typeof BookOpen }[] = [
 ];
 const stages = ['Learn', 'Understand', 'Recall', 'Practice', 'Master'];
 
-function Brand() {
-  return (
-    <div className="brand">
-      <span className="brand-mark">
-        <ChessPiece type="r" color="w" />
-      </span>
-      <span>
-        first move<span className="brand-dot">.</span>
-      </span>
-    </div>
-  );
-}
 function Button({
   children,
   onClick,
@@ -252,7 +241,7 @@ export default function App() {
       <div className="main-shell">
         <header className="topbar">
           <div className="mobile-brand">
-            <Brand />
+            <Brand compact />
           </div>
           <div className="breadcrumb">
             Your workspace <ChevronRight size={13} />
@@ -280,7 +269,11 @@ export default function App() {
                 Offline
               </span>
             )}
-            <button className="streak-pill" onClick={() => changePage('progress')}>
+            <button
+              className="streak-pill"
+              onClick={() => changePage('progress')}
+              aria-label={`${stats.streak} day streak — view progress`}
+            >
               <Flame size={17} />
               <strong>{stats.streak}</strong>
               <span>day streak</span>
@@ -547,7 +540,7 @@ export default function App() {
             </>
           )}
           <footer className="footer">
-            <Brand />
+            <Brand compact />
             <span>Better moves. One day at a time.</span>
             <span className="footer-leaf">
               <Leaf size={13} /> Thoughtfully made for learning

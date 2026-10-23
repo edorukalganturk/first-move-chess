@@ -1,1 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192"><rect width="192" height="192" rx="44" fill="#234b3d"/><path d="M58 44h18v17h12V44h17v17h12V44h18v40l-15 13v39h10v14H64v-14h10V97L58 84z" fill="#f4f2e9"/><path d="M57 152h80v11H57z" fill="#f4f2e9"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+  <title>ChessMahal crowned king</title>
+  <rect width="192" height="192" fill="#f7f8f3" />
+  <g transform="translate(11.52 11.52) scale(.88)">
+    <path fill="#dca852" d="m74 59-11-29 20 13 13-23 13 23 20-13-11 29Z" />
+    <g fill="#dca852">
+      <circle cx="63" cy="30" r="4" />
+      <circle cx="96" cy="20" r="4" />
+      <circle cx="129" cy="30" r="4" />
+      <path d="M74 59h44v7H74Z" />
+    </g>
+    <path
+      fill="#02593f"
+      fill-rule="evenodd"
+      d="M96 72C85 51 48 53 42 78c-7 26 23 40 28 57l2 10h48l2-10c5-17 35-31 28-57-6-25-43-27-54-6Zm-18 39C67 99 59 90 63 82c4-8 15-6 18 2Zm36 0-3-27c3-8 14-10 18-2 4 8-4 17-15 29Z"
+    />
+    <path fill="#dca852" d="M72 138h48v9H72Z" />
+    <path fill="#02593f" d="M67 147h58c8 0 14 6 14 14v4H53v-4c0-8 6-14 14-14Z" />
+  </g>
+</svg>

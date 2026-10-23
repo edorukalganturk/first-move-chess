@@ -1,0 +1,97 @@
+{
+  "id": "italian-game",
+  "title": "Why play Bc4? | The Italian Game",
+  "variationId": "giuoco-piano",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration": 36.5,
+  "voice": "Microsoft Zira Desktop",
+  "voiceRate": 1,
+  "scenes": [
+    {
+      "id": "hook",
+      "start": 0,
+      "end": 4.2,
+      "eyebrow": "THE ITALIAN GAME",
+      "heading": ["Why play", "Bc4?"],
+      "body": "A bishop move with a bigger idea.",
+      "noteLabel": "START HERE",
+      "note": "Develop with a purpose.",
+      "voice": "Why play bishop to C four? Let's find out.",
+      "voiceStart": 0.15
+    },
+    {
+      "id": "develop",
+      "start": 4.2,
+      "end": 7.8,
+      "eyebrow": "ONE MOVE. THREE IDEAS.",
+      "heading": ["Meet the", "Italian Game."],
+      "body": "Bring your bishop into the game.",
+      "noteLabel": "3. Bc4",
+      "note": "An active square. A clear plan.",
+      "voice": "Develop a piece, with a plan.",
+      "voiceStart": 4.5
+    },
+    {
+      "id": "pressure",
+      "start": 7.8,
+      "end": 14,
+      "eyebrow": "IDEA 01 / PRESSURE",
+      "heading": ["Aim at", "f7."],
+      "body": "Only Black's king defends this pawn.",
+      "noteLabel": "THE c4–f7 DIAGONAL",
+      "note": "Keep developing before you attack.",
+      "voice": "First, aim at F seven. Right now, only Black's king defends that pawn.",
+      "voiceStart": 8.15
+    },
+    {
+      "id": "castle",
+      "start": 14,
+      "end": 19.5,
+      "eyebrow": "IDEA 02 / KING SAFETY",
+      "heading": ["Make room", "to castle."],
+      "body": "Bc4 clears f1. Nf3 already cleared g1.",
+      "noteLabel": "AFTER 3...Bc5",
+      "note": "The path to kingside castling is clear.",
+      "voice": "Next, clear the way to castle. Your king now has room.",
+      "voiceStart": 14.25
+    },
+    {
+      "id": "center",
+      "start": 19.5,
+      "end": 25.5,
+      "eyebrow": "IDEA 03 / THE CENTER",
+      "heading": ["Prepare", "c3, then d4."],
+      "body": "c3 supports a future d4 advance.",
+      "noteLabel": "A PLAN TO REMEMBER",
+      "note": "Your pieces and pawns work together.",
+      "voice": "Then, support D four with C three. You're preparing to challenge the center.",
+      "voiceStart": 19.9
+    },
+    {
+      "id": "recall",
+      "start": 25.5,
+      "end": 31,
+      "eyebrow": "YOUR TURN / WHITE TO MOVE",
+      "heading": ["Find the", "bishop move."],
+      "body": "Which square brings these ideas together?",
+      "noteLabel": "PLAY IT FROM MEMORY",
+      "note": "Take a moment. Choose your square.",
+      "voice": "Your turn. Where should the bishop go?",
+      "voiceStart": 25.75
+    },
+    {
+      "id": "practice",
+      "start": 31,
+      "end": 36.5,
+      "eyebrow": "MAKE THE IDEA STICK",
+      "heading": ["Learn it.", "Then remember it."],
+      "body": "Practice the Italian Game in the app.",
+      "noteLabel": "YOUR NEXT MOVE",
+      "note": "Learn. Recall. Repeat.",
+      "voice": "Practice the full Italian Game in the app. Then play it from memory.",
+      "voiceStart": 31.2
+    }
+  ]
+}

@@ -1,10 +1,10 @@
-# First Move
+# ChessMahal
 
 A mobile-first chess opening trainer. Learn the idea behind a move, recall it on the board, and return to it through spaced practice.
 
 ## Play online
 
-[Play First Move in your browser](https://first-move-chess-01a1084d.edorukalganturk.chatgpt.site) — no installation required.
+[Play ChessMahal in your browser](https://first-move-chess-01a1084d.edorukalganturk.chatgpt.site) — no installation or account required. Share this link to start playing on a phone, tablet, or computer. Progress is saved locally on each device.
 
 ## Run
 
@@ -32,6 +32,12 @@ npm run dev
 
 To test and build with npm, use `npm test`, `npm run build`, and `npm run preview`.
 
+## Branding
+
+The approved crowned chess-palace logo is preserved in `src/assets/chessmahal-logo-v4.png`. The sidebar displays the full logo; the mobile header and footer pair its emblem with the ChessMahal wordmark. Both light and dark appearances are supported.
+
+The favicon and install icons use the logo's crowned king detail. Edit `public/icon.svg` and run `node scripts/branding/export-icons.mjs` to regenerate the PNG icons. Branding assets are included in the production offline cache. Existing progress and appearance storage keys remain compatible.
+
 ## Included
 
 - Complete Italian Game → Giuoco Piano: `1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. c3 Nf6`.
@@ -49,7 +55,7 @@ To test and build with npm, use `npm test`, `npm run build`, and `npm run previe
 | Area                                            | Location                                      |
 | ----------------------------------------------- | --------------------------------------------- |
 | Opening and variation schema                    | `src/domain/types.ts`                         |
-| Opening catalog and lookup         | `src/domain/openings.ts`                      |
+| Opening catalog and lookup                      | `src/domain/openings.ts`                      |
 | Annotated variation content by opening          | `src/domain/opening-data/`                    |
 | chess.js move validation and puzzle generation  | `src/domain/chess.ts`                         |
 | Learned position pool and balanced mixed rounds | `src/domain/mixed-practice.ts`                |

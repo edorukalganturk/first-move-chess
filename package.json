@@ -1,5 +1,5 @@
 {
-  "name": "first-move",
+  "name": "chessmahal",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -7,7 +7,10 @@
     "dev": "vite --host 0.0.0.0",
     "build": "tsc -b && vite build",
     "preview": "vite preview --host 0.0.0.0",
-    "test": "vitest run"
+    "test": "vitest run",
+    "shorts:italian": "node scripts/shorts/render.mjs",
+    "shorts:italian:tr": "node scripts/shorts/render.mjs --config shorts/italian-game-tr.json",
+    "shorts:sicilian": "node scripts/shorts/render.mjs --config shorts/sicilian-defense.json"
   },
   "dependencies": {
     "@fontsource/dm-sans": "^5.2.8",

@@ -1,0 +1,9 @@
+{
+  "name": "chess-shorts-local-speech",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@huggingface/transformers": "3.8.1",
+    "kokoro-js": "1.2.1"
+  }
+}

@@ -3,10 +3,15 @@ node_modules/
 .sites-runtime/
 .sites-checkout/
 .sites-checkout-*/
+shorts/output/
+shorts/models/
 dist/
+/output/
 test-results/
 playwright-report/
 *.tsbuildinfo
+__pycache__/
+*.pyc
 *.log
 
 # Local hosting metadata and environment secrets
